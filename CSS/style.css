@@ -119,3 +119,63 @@ body{
 .menu-bar .sociales a:hover{
     color: var(--color-secundario);
 }
+
+.menu-principal i{
+    cursor: pointer;
+    color: var(--color-texto);
+    font-size: 30px;
+    float: right;
+    transition: all 0.5s;
+    display: none;
+}
+
+.menu-principal i:hover{
+    color: var(--color-secundario);
+}
+
+@media screen and (max-width: 650px) {
+    .menu-principal{
+        position: fixed;
+        top: 0;
+        margin-top: 0;
+    }
+
+    .menu-principal i{
+        display: block;
+    }
+
+    .menu-bar{
+        justify-content: space-around; /*Para que se reparte el espacio entre los elementos*/
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh; /*Para que ocupe todo el alto de la pantalla*/
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 1000; /*para que se quede por encima de todo*/
+        background: #333;
+        transition: all 1s;
+        transform: translateX(100%); /*Para que se oculte*/
+    }
+    .menu-bar i{
+        position: absolute;
+        right: 50px;
+        top: 50px;
+    }
+
+    .menu-bar .active{
+        transform: translateX(0%);
+    }
+
+    .menu-bar .enlaces ul li{
+        display: block;
+        text-align: center;
+        padding: 20px 10px;
+    }
+
+    .menu-bar .enlaces ul li a
+    .menu-bar .sociales a{
+        font-size: 20px;
+    }
+}
