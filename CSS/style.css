@@ -164,7 +164,7 @@ body{
         top: 50px;
     }
 
-    .menu-bar .active{
+    .menu-bar.active{
         transform: translateX(0%);
     }
 
