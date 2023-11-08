@@ -176,6 +176,7 @@ body{
     display: flex;
     overflow: hidden; /*Para que scoll no salga*/
     height: calc(100vh - 80px); /*Para que el slider ocupe todo el alto menos el del menu*/
+    scroll-behavior: smooth; /*Para que se mueva mas lento el scroll*/
 }
 
 .container-productos{
