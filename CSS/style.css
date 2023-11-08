@@ -1,6 +1,7 @@
 :root{
     --color-primario: #FCB03B;
     --color-secundario: #E92F3D;
+    --color-background-sombra: #E92F3D30;
     --color-background: #EFF6F5;
     --color-texto: #A1A5A6;
     --text-defaul: 'Open Sans'
@@ -133,6 +134,120 @@ body{
     color: var(--color-secundario);
 }
 
+/*Estilos de slider*/
+#menu-productos .contenedor-principal{
+    display: flex;
+    align-items: center;
+    position: relative; /*Para los elementos que esten dentro darle position absolute*/
+    z-index: 0; /*Para que no trunque con el menu*/
+}
+
+.contenedor-principal #btn-izquierda,
+.contenedor-principal #btn-derecha{
+    position: absolute;
+    height: 10%;
+    width: 50px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 40px;
+    margin: 0 15px;
+    color: var(--color-secundario);
+    z-index: 500;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.contenedor-principal #btn-izquierda:hover,
+.contenedor-principal #btn-derecha:hover{
+    background: var(--color-background-sombra);
+    transform: translateY(5px);
+}
+
+.contenedor-principal #btn-izquierda{
+    left: 0;
+}
+
+.contenedor-principal #btn-derecha{
+    right: 0;
+}
+
+.slider{
+    display: flex;
+    overflow: hidden; /*Para que scoll no salga*/
+    height: calc(100vh - 80px); /*Para que el slider ocupe todo el alto menos el del menu*/
+}
+
+.container-productos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 100%; /*Que tenga un tamaño base de 100%*/
+    flex-shrink: 0; /*Para que todos tengan el mismo tamaño*/
+}
+
+.descripcion-producto{
+    width: 30%;
+}
+
+.descripcion-producto h1{
+    font-size: 5vw;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.descripcion-producto h2{
+    text-transform: lowercase;
+    font-size: 2.2vw;
+    font-weight: 100;
+}
+
+.descripcion-producto p{
+    color: var(--color-texto);
+    font-family: italic;
+    text-align: justify;
+}
+
+.imagen-productos{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.imagen-productos img{
+    width: 100%;
+    transform: scale(1.1); /*Para que se agrande la img*/
+    transition: all 0.3s;
+}
+
+.container-productos:hover .imagen-productos img{
+    transform: scale(1.15);
+}
+
+
+
+
+/*Media queries*/
+@media screen and (max-width: 850px){
+    .container-productos{
+        flex-direction: column;
+    }
+
+    .descripcion-producto{
+        width: 70%;
+        order: 1;
+    }
+
+    .descripcion-producto .btn{
+        padding: 10px 20px;
+    }
+
+    .descripcion-producto .btn:hover{
+        padding: 10px 30px;
+    }
+    
+}
+
 @media screen and (max-width: 650px) {
     .menu-principal{
         position: fixed;
@@ -177,5 +292,21 @@ body{
     .menu-bar .enlaces ul li a
     .menu-bar .sociales a{
         font-size: 20px;
+    }
+    
+    .slider{
+        height: calc(100vh - 0px);
+    }
+
+    .imagen-productos{
+        width: 60%
+    }
+
+    .descripcion-producto h1{
+        font-size: 7vw;
+    }
+
+    .descripcion-producto h2{
+        font-size: 3vw;
     }
 }
