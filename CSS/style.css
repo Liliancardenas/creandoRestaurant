@@ -56,3 +56,66 @@ body{
 .btn:hover{
     padding: 15px 45px;
 }
+
+/*Estilos del menu*/
+
+.menu-principal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 75px;
+    padding: 0 30px;
+    margin-top: 10px;
+    background: var(--color-background);
+    z-index: 1;
+}
+
+.logo img{
+    width: 130px;
+    cursor: pointer;
+}
+
+.menu-bar{
+   display: flex;
+   width: 100%;
+   justify-content: space-between;
+}
+
+.menu-bar .enlaces ul li{
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.menu-bar .enlaces ul li a{
+    text-decoration: none;
+    color: var(--color-texto);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    /*Color de background pero dejandolo como linea*/
+    background: linear-gradient(currentColor, currentColor);
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: all 0.5s;
+}
+
+.menu-bar .enlaces ul li a:hover{
+    background-size: 100% 2px;
+    color: var(--color-secundario);
+}
+
+.menu-bar .sociales a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0 10px;
+    color: var(--color-texto);
+    transition: all 0.5s;
+}
+
+.menu-bar .sociales a:hover{
+    color: var(--color-secundario);
+}
