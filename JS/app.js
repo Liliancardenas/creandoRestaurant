@@ -33,3 +33,32 @@ btnDerecho.addEventListener("click", function () {
 btnIzquierdo.addEventListener("click", function () {
     slider.scrollLeft -= slider.offsetWidth;
 })
+
+//Validación de formulario
+
+const formulario = document.getElementById("formulario");
+
+function validar(e) {
+    const nombre = document.getElementById("nombre").value;
+    const email = document.getElementById("email").value;
+    const contenido = document.getElementById("comentario").value;
+
+    if (nombre === "" || email === "" || contenido === "") {
+        e.preventDefault();
+        Swal.fire({
+            title: "Error!",
+            text: "Todos los campos son obligatorios",
+            icon: "error",
+        });
+    } else {
+        e.preventDefault();
+        Swal.fire({
+            title: "Datos enviados",
+            text: "Gracias por ponerte en contacto",
+            icon: "success",
+        });
+        formulario.reset();
+    }
+}
+
+formulario.addEventListener("submit", validar);
