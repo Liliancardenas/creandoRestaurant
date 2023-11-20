@@ -597,6 +597,47 @@ footer{
     transform: translateY(-20px);
 }
 
+#btn-top{
+    width: 50px;
+    height: 50px;
+    background: var(--color-primario);
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+    transform: translateY(200%); /*Para que desaparezca y cuando se haga scoll aparezca nuevamente*/
+    transition: all 0.5s;
+}
+
+#btn-top.show{
+    transform: translateY(0); /*Para que cuando tenga esta clase aparezca el btn*/
+}
+
+#btn-top.scrollFinal{
+   transform: translateY(-250%);
+}
+
+#btn-top:hover{
+    background: #c98d33;
+}
+
+#btn-top span{
+    color: #FFF;
+    font-size: 25px;
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+    transition: all 0.5s;
+}
+
+#btn-top:hover span{
+    transform: translateY(-3px);
+}
+
+
+
+
 /*Media queries*/
 @media screen and (max-width: 850px){
     .container-productos{
@@ -714,5 +755,9 @@ footer{
     .sociales-metodo{
         width: 50%;
         margin-top: 0px;
+    }
+
+    #btn-top{
+        display: none;
     }
 }
