@@ -15,6 +15,10 @@
     font-family: var(--text-defaul);
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background: var(--color-background);
 }
@@ -544,6 +548,54 @@ body{
     padding: 15px 65px;
 }
 
+footer{
+    display: flex;
+    margin-top: 100px;
+}
+
+.sociales-metodo{
+    width: 25%;
+    height: 100px;
+    background: #333;
+    color: #FFF;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.sociales-metodo i{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    font-size:30px;
+    line-height: 100px;
+    transition: all 0.5s;
+}
+
+.sociales-metodo span{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px, 0;
+    font-size: 12px;
+    background: var(--color-primario);
+    color: #FFF;
+    letter-spacing: 1px;
+    font-weight: 700;
+    transform: translateY(60px);
+    transition: all 0.5s;
+}
+
+.sociales-metodo i:hover + span{
+    transform: translateY(0px);
+}
+
+.sociales-metodo i:hover{
+    transform: translateY(-20px);
+}
 
 /*Media queries*/
 @media screen and (max-width: 850px){
@@ -653,5 +705,14 @@ body{
 
     .inputConIcon{
         width: 100%;
+    }
+
+    footer{
+        flex-wrap: wrap;
+    }
+
+    .sociales-metodo{
+        width: 50%;
+        margin-top: 0px;
     }
 }
